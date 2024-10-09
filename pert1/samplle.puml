@@ -1,0 +1,11 @@
+@startuml
+title Menghitung Luas Segitiga
+
+start
+:Masukkan panjang alas;
+:Masukkan tinggi segitiga;
+:Hitung luas dengan rumus (alas * tinggi) / 2;
+:Menampilkan hasil luas segitiga;
+stop
+
+@enduml
