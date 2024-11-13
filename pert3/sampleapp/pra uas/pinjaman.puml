@@ -1,0 +1,19 @@
+@startuml
+start
+
+:Login/Registrasi Pengguna;
+
+:Menu Utama;
+if (Pilih Simpanan atau Pinjaman?) then (Simpanan)
+    :Input Setoran Simpanan;
+    :Proses Simpanan;
+else (Pinjaman)
+    :Pengajuan Pinjaman;
+    :Input Detail Pinjaman;
+    :Proses Pinjaman;
+endif
+
+:Generate Laporan Keuangan;
+
+stop
+@enduml

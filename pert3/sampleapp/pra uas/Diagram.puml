@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+
+partition "Use Case Diagram" {
+    actor Pembeli
+    actor Penjual
+
+    Pembeli --> (Lihat Produk)
+    Pembeli --> (Tambah ke Keranjang)
+    Pembeli --> (Pilih Metode Pembayaran)
+    Pembeli --> (Bayar Pesanan)
+    Pembeli --> (Terima Barang)
+
+    Penjual --> (Tambahkan Produk)
+    Penjual --> (Kelola Produk)
+    Penjual --> (Kelola Pesanan)
+
+    (Terima Barang) --> (Konfirmasi Pengiriman)
+    (Bayar Pesanan) --> (Proses Order)
+}
+
+partition "Flowchart" {
+    start
+    :Login/Registrasi Pengguna;
+    if (Login berhasil?) then (Ya)
+        :Pilih Produk;
+        :Tambah ke Keranjang;
+        :Pilih Metode Pembayaran;
+        if (Pembayaran berhasil?) then (Ya)
+            :Proses Order;
+            :Konfirmasi Pengiriman;
+        else (Tidak)
+            :Pilih Ulang Metode Pembayaran;
+        endif
+    else (Tidak)
+        :Tampilkan Pesan Error;
+    endif
+    stop
+}
+@enduml

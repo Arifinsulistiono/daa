@@ -1,0 +1,23 @@
+@startuml
+start
+
+:Login/Registrasi Pengguna;
+
+if (Login berhasil?) then (Ya)
+    :Pilih Produk;
+    :Tambah ke Keranjang;
+    :Pilih Metode Pembayaran;
+    
+    if (Pembayaran berhasil?) then (Ya)
+        :Proses Order;
+        :Konfirmasi Pengiriman;
+    else (Tidak)
+        :Pilih Ulang Metode Pembayaran;
+    endif
+    
+else (Tidak)
+    :Tampilkan Pesan Error;
+endif
+
+stop
+@enduml

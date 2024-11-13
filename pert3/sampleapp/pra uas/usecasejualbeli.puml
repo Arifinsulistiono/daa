@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor Pembeli
+actor Penjual
+
+Pembeli --> (Lihat Produk)
+(Lihat Produk)--> (Tambah ke Keranjang)
+(Tambah ke Keranjang) --> (Pilih Metode Pembayaran)
+(Pilih Metode Pembayaran)--> (Bayar Pesanan)
+(Bayar Pesanan)--> (Terima Barang)
+
+Penjual --> (Tambahkan Produk)
+Penjual --> (Kelola Produk)
+Penjual --> (Kelola Pesanan)
+
+(Terima Barang) --> (Konfirmasi Pengiriman)
+(Bayar Pesanan) --> (Proses Order)
+
+@enduml

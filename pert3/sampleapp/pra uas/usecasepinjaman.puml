@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor Nasabah
+
+Nasabah --> (Registrasi)
+Registrasi -->(Login)
+Nasabah --> (Login)
+Login "LB" -> (Halaman Utama)
+(Halaman Utama) --> (Setor Simpanan)
+(Halaman Utama) --> (Ajukan Pinjaman)
+(Halaman Utama)--> (Lihat Laporan Keuangan)
+(Halaman Utama)--> (Bayar Cicilan)
+
+(Setor Simpanan) --> (Generate Laporan Simpanan)
+(Ajukan Pinjaman) --> (Proses Pengajuan Pinjaman)
+(Bayar Cicilan) --> (Laporan Cicilan)
+
+@enduml
