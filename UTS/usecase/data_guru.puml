@@ -1,0 +1,33 @@
+@startuml UC_AbsensiGajiGuru
+title Diagram Use Case untuk Sistem Absensi dan Gaji Guru
+
+actor "Admin" as admin
+actor "Staf" as staf
+actor "Guru" as guru
+
+rectangle "Sistem Absensi & Gaji Guru" {
+    usecase "Mencatat Kehadiran" as UC_MencatatKehadiran
+    usecase "Menghasilkan Slip Gaji" as UC_MenghasilkanSlipGaji
+    usecase "Melihat Kehadiran" as UC_MelihatKehadiran
+    usecase "Melihat Riwayat Gaji" as UC_MelihatRiwayatGaji
+    usecase "Mengelola Data Karyawan" as UC_MengelolaDataKaryawan
+    usecase "Menyetujui Pembayaran Gaji" as UC_MenyetujuiPembayaranGaji
+    usecase "Memperbarui Kehadiran" as UC_MemperbaruiKehadiran
+    usecase "Memperbarui Gaji" as UC_MemperbaruiGaji
+
+    guru --> UC_MencatatKehadiran
+    guru --> UC_MelihatKehadiran
+    guru --> UC_MelihatRiwayatGaji
+
+    staf --> UC_MencatatKehadiran
+    staf --> UC_MemperbaruiKehadiran
+    staf --> UC_MenghasilkanSlipGaji
+    staf --> UC_MelihatRiwayatGaji
+
+    admin --> UC_MengelolaDataKaryawan
+    admin --> UC_MenyetujuiPembayaranGaji
+    admin --> UC_MemperbaruiGaji
+    admin --> UC_MenghasilkanSlipGaji
+}
+
+@enduml
