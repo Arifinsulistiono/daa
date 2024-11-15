@@ -1,33 +1,26 @@
 @startuml Flow_AbsensiGajiGuru
-title Business Flow for Absensi dan Gaji Guru System
+title Alur Proses Absensi dan Gaji Guru
 
 |Guru|
 start
 :Catat Kehadiran;
-:Verifikasi Kehadiran;
 :Periksa Riwayat Kehadiran;
 :Periksa Riwayat Gaji;
-stop
 
 |Staf|
-start
 :Catat Kehadiran Guru;
 :Verifikasi Kehadiran Guru;
 :Perbarui Kehadiran Guru;
-:Hasilkan Slip Gaji;
-:Periksa Riwayat Gaji Guru;
-stop
+:Perbarui Data Gaji Guru;
+:Siapkan Slip Gaji;
 
 |Admin|
-start
 :Kelola Data Guru;
+:Verifikasi Kehadiran Guru;
 :Perbarui Data Kehadiran;
 :Perbarui Data Gaji;
 :Tinjau dan Setujui Pembayaran Gaji;
-:Periksa Laporan Absensi dan Gaji;
-:Verifikasi Laporan;
-:Penyetoran Gaji;
-stop
+:Proses Penyetoran Gaji;
 
 |Admin/Staff|
 if (Pembayaran Gaji Disetujui?) then (ya)
@@ -38,4 +31,8 @@ else (tidak)
     stop
 endif
 
+|Guru|
+:Terima Slip Gaji;
+:Verifikasi Pembayaran Gaji;
+stop
 @enduml

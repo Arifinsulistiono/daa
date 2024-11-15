@@ -6,14 +6,15 @@ actor "Staf" as staf
 actor "Guru" as guru
 
 rectangle "Sistem Absensi & Gaji Guru" {
-    usecase "Mencatat Kehadiran" as UC_MencatatKehadiran
-    usecase "Menghasilkan Slip Gaji" as UC_MenghasilkanSlipGaji
-    usecase "Melihat Kehadiran" as UC_MelihatKehadiran
+    usecase "Mencatat Kehadiran Guru" as UC_MencatatKehadiran
+    usecase "Mengelola Data Guru" as UC_MengelolaDataGuru
+    usecase "Melihat Kehadiran Guru" as UC_MelihatKehadiran
     usecase "Melihat Riwayat Gaji" as UC_MelihatRiwayatGaji
-    usecase "Mengelola Data Karyawan" as UC_MengelolaDataKaryawan
+    usecase "Memperbarui Kehadiran Guru" as UC_MemperbaruiKehadiran
+    usecase "Memperbarui Gaji Guru" as UC_MemperbaruiGaji
     usecase "Menyetujui Pembayaran Gaji" as UC_MenyetujuiPembayaranGaji
-    usecase "Memperbarui Kehadiran" as UC_MemperbaruiKehadiran
-    usecase "Memperbarui Gaji" as UC_MemperbaruiGaji
+    usecase "Menyiapkan Slip Gaji" as UC_MenyiapkanSlipGaji
+    usecase "Mencatat Kehadiran" as UC_MencatatKehadiran
 
     guru --> UC_MencatatKehadiran
     guru --> UC_MelihatKehadiran
@@ -21,13 +22,13 @@ rectangle "Sistem Absensi & Gaji Guru" {
 
     staf --> UC_MencatatKehadiran
     staf --> UC_MemperbaruiKehadiran
-    staf --> UC_MenghasilkanSlipGaji
+    staf --> UC_MenyiapkanSlipGaji
     staf --> UC_MelihatRiwayatGaji
 
-    admin --> UC_MengelolaDataKaryawan
+    admin --> UC_MengelolaDataGuru
     admin --> UC_MenyetujuiPembayaranGaji
     admin --> UC_MemperbaruiGaji
-    admin --> UC_MenghasilkanSlipGaji
+    admin --> UC_MenyiapkanSlipGaji
 }
 
 @enduml
